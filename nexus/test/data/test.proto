@@ -1,0 +1,49 @@
+syntax = "proto3";
+package message;
+option go_package = "/message";
+
+// this is description
+service TestCommandService {
+  // this is method description
+  rpc Add(TestRequest) returns (TestResponse);
+  // this is method description
+  rpc Sub(TestRequest) returns (TestResponse);
+  // this is method description
+  rpc Mul(TestRequest) returns (TestResponse);
+  // this is method description
+  rpc Div(TestRequest) returns (TestResponse);
+}
+
+
+service TestQueryService{
+  rpc GetUserById(UserReq) returns (User);
+  rpc ListUserByIds(ListUserReq) returns(UserResp);
+
+}
+
+message UserReq{
+  int64 id = 1;
+}
+
+message ListUserReq{
+  repeated int64 ids = 1;
+}
+
+message UserResp{
+  repeated User users = 1;
+}
+
+message User{
+  string name = 1;
+  int32  age = 2;
+  int32 gender = 3;
+}
+
+message TestRequest {
+  double a = 1;
+  double b = 2;
+}
+
+message TestResponse {
+  double c = 1;
+}
