@@ -31,4 +31,4 @@ require (
 	google.golang.org/genproto v0.0.0-20230306155012-7f2fa6fef1f4 // indirect
 )
 
-replace github.com/StephenMAOhjm/noa => /Users/stephenmao/GolandProjects/noa
+
