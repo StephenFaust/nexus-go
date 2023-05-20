@@ -39,7 +39,7 @@ func generateServer(plugin *protogen.Plugin) error {
 		t.P(pkg)
 		t.P()
 		importCode := `import (
-		"nexus-go/nexus"
+		"github.com/StephenFaust/nexus-go/nexus"
         "reflect"
 		)`
 		t.P(importCode)
@@ -99,7 +99,7 @@ func generateClient(plugin *protogen.Plugin) error {
 		t.P(pkg)
 		t.P()
 		importCode := `import (
-		"nexus-go/nexus"
+		"github.com/StephenFaust/nexus-go/nexus"
 		)`
 		t.P(importCode)
 		t.P()
