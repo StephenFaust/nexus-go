@@ -3,13 +3,13 @@ package nexus
 import (
 	"bytes"
 	"fmt"
+	"github.com/StephenFaust/nexus-go/nexus/common"
+	"github.com/StephenFaust/nexus-go/nexus/serializer"
 	"github.com/StephenFaust/noa/codec"
 	"github.com/StephenFaust/noa/io"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
 	"log"
-	"nexus-go/nexus/common"
-	"nexus-go/nexus/serializer"
 	"reflect"
 	"sync"
 )

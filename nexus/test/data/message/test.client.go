@@ -3,7 +3,7 @@
 package message
 
 import (
-	"nexus-go/nexus"
+	"github.com/StephenFaust/nexus-go/nexus"
 )
 
 // TestCommandServiceClient  this is description

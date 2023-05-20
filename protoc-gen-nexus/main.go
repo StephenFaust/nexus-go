@@ -3,9 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"strings"
-
 	"google.golang.org/protobuf/compiler/protogen"
+	"strings"
 )
 
 func main() {

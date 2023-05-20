@@ -1,9 +1,9 @@
 package test
 
 import (
+	"github.com/StephenFaust/nexus-go/nexus"
+	"github.com/StephenFaust/nexus-go/nexus/test/data/message"
 	"log"
-	"nexus-go/nexus"
-	"nexus-go/nexus/test/data/message"
 	"testing"
 	"time"
 )
