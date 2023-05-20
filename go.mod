@@ -3,7 +3,6 @@ module nexus-go
 go 1.20
 
 require (
-	github.com/StephenMAOhjm/noa v0.0.0-20230423033418-fc0b1d2344fc
 	github.com/hashicorp/consul/api v1.20.0
 	github.com/satori/go.uuid v1.2.0
 	google.golang.org/grpc v1.55.0
@@ -11,6 +10,7 @@ require (
 )
 
 require (
+	github.com/StephenFaust/noa v0.0.0-20230519094703-e7aa8e309e27 // indirect
 	github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da // indirect
 	github.com/fatih/color v1.9.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
@@ -30,5 +30,3 @@ require (
 	golang.org/x/text v0.8.0 // indirect
 	google.golang.org/genproto v0.0.0-20230306155012-7f2fa6fef1f4 // indirect
 )
-
-

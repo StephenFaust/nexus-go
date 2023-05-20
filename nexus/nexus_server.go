@@ -3,8 +3,8 @@ package nexus
 import (
 	"bytes"
 	"fmt"
-	"github.com/StephenMAOhjm/noa/codec"
-	"github.com/StephenMAOhjm/noa/io"
+	"github.com/StephenFaust/noa/codec"
+	"github.com/StephenFaust/noa/io"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
 	"log"
