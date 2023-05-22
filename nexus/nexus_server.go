@@ -66,7 +66,11 @@ func (handler nexusServerChanelHandler) OnClose() {
 func (s *RpcServer) start(port int) error {
 	s.serializer = serializer.ProtoSerializer{}
 	server := io.NewServer(nexusServerChanelHandler{s}, codec.DefaultCodec)
-	_ = server.Listen(port)
+	err := server.Listen(port)
+	if err != nil {
+		return err
+	}
+	log.Println("Nexus server started,port:", port)
 	return nil
 }
 
