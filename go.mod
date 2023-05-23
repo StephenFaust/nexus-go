@@ -10,7 +10,7 @@ require (
 )
 
 require (
-	github.com/StephenFaust/noa v0.0.0-20230519094703-e7aa8e309e27 // indirect
+	github.com/StephenFaust/noa v0.0.0-20230523073439-4dbf5f9bc504 // indirect
 	github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da // indirect
 	github.com/fatih/color v1.9.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
