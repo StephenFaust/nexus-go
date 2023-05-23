@@ -47,26 +47,31 @@ type chanelPool struct {
 	locker     sync.Mutex      // 同步锁
 }
 
-func (pool *chanelPool) getChanel() (*io.Chanel, error) {
+func (pool *chanelPool) getChanel() (chanel *io.Chanel, err error) {
 	// 尝试从通道中获取一个连接
 	select {
-	case chanel := <-pool.chanelChan:
+	case chanel = <-pool.chanelChan:
 		return chanel, nil
 	default:
 		// 如果通道中没有可用的连接，则创建一个新连接
 		pool.locker.Lock()
 		if pool.num >= pool.maxNum {
 			pool.locker.Unlock()
-			return <-pool.chanelChan, nil
-		}
-		chanel, err := pool.factory.connect()
-		if err != nil {
+			chanel = <-pool.chanelChan
+		} else {
+			chanel, err = pool.factory.connect()
+			if err != nil {
+				pool.locker.Unlock()
+				return nil, err
+			}
+			pool.num++
 			pool.locker.Unlock()
-			return nil, err
 		}
-		pool.num++
-		pool.locker.Unlock()
-		return chanel, nil
+	}
+	if chanel.IsActive() {
+		return chanel, err
+	} else {
+		return pool.getChanel()
 	}
 }
 

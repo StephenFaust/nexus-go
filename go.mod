@@ -1,6 +1,5 @@
 module github.com/StephenFaust/nexus-go
 
-
 go 1.20
 
 require (
