@@ -17,7 +17,7 @@ go install github.com/stephenfaust/nexus-go/protoc-gen-nexus
 
 ## 快速开始
 
-###### 在项目引入neuxs-go
+###### 在项目引入nexus-go
 
 ```
 go get github.com/stephenfaust/nexus-go
