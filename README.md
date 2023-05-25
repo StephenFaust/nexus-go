@@ -164,11 +164,11 @@ func (sc *TestQueryServiceClient) ListUserByIds(args *ListUserReq, reply *UserRe
 - 启动客户端
 
 ```
-	client := nexus.NewClient("127.0.0.1:1234", 4)
-	serviceClient := message.NewTestQueryServiceClient(client)
-	req := &message.UserReq{
-		Id: 1,
-	}
-	resp := new(message.User)
-	err := serviceClient.GetUserById(req, resp)
+client := nexus.NewClient("127.0.0.1:1234", 4)
+serviceClient := message.NewTestQueryServiceClient(client)
+req := &message.UserReq{
+	Id: 1,
+}
+resp := new(message.User)
+err := serviceClient.GetUserById(req, resp)
 ```
