@@ -3,6 +3,7 @@
 ## 安装
 
 ###### 安装protoc [http://github.com/google/protobuf/releases](http://github.com/google/protobuf/releases)
+
 ###### 安装protoc-gen-go
 
 ```
@@ -63,6 +64,7 @@ message User{
 ```
 protoc  --nexus_out=gen-ser=true:. --go_out=. test.proto
 ```
+
 - 生成服务端代码如下
 
 ```
@@ -162,11 +164,11 @@ func (sc *TestQueryServiceClient) ListUserByIds(args *ListUserReq, reply *UserRe
 - 启动客户端
 
 ```
-client := nexus.NewClient("127.0.0.1:1234", 4)
-	sopCommandServiceClient := message.NewSopCommandServiceClient(client)
-	req := &message.CreateSopReq{
-		AppId: 1, OrgId: 2, SopDesc: "1",
+	client := nexus.NewClient("127.0.0.1:1234", 4)
+	serviceClient := message.NewTestQueryServiceClient(client)
+	req := &message.UserReq{
+		Id: 1,
 	}
-	resp := new(message.SopResp)
-	err := sopCommandServiceClient.CreateSop(req, resp)
+	resp := new(message.User)
+	err := serviceClient.GetUserById(req, resp)
 ```
